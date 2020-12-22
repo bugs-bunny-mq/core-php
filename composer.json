@@ -1,0 +1,33 @@
+{
+    "name": "bugs-bunny-mq/core-php",
+    "description": "Core of php rabbit-mq wrapper library",
+    "keywords": [
+        "rabbit-mq",
+        "php"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BugsBunnyMq\\CorePhp\\": "lib/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
