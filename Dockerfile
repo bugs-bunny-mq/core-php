@@ -2,7 +2,7 @@ FROM php:7.2-apache
 ARG XDEBUG_VERSION=2.6.0
 
 RUN apt update && apt install -y libpq-dev libpng-dev libxml2-dev git
-RUN docker-php-ext-install gd zip mbstring
+RUN docker-php-ext-install gd zip mbstring sockets
 
 RUN pecl install xdebug-2.6.0 && docker-php-ext-enable xdebug \
     && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" >> /usr/local/etc/php/php.ini  \
