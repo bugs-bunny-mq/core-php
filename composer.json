@@ -36,7 +36,7 @@
         "post-install-cmd": [
             "bash .scripts/composer_post_install_cmd.sh"
         ],
-        "lint": "sh .scripts/lint.sh",
-        "lintf": "sh .scripts/lint-fix.sh"
+        "lint": "docker-compose up -d && docker-compose exec -T env bash -c 'bash .scripts/lint.sh'",
+        "lintf": "docker-compose up -d && docker-compose exec -T env bash -c 'bash .scripts/lint-fix.sh'"
     }
 }

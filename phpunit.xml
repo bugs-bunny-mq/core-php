@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="bootstrap/app.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="tap" target="report/tests/build/report.tap"/>
+        <log type="junit" target="report/tests/build/report.junit.xml"/>
+        <log type="coverage-html" target="report/tests/build/coverage"/>
+        <log type="coverage-text" target="report/tests/build/coverage.txt"/>
+        <log type="coverage-clover" target="report/tests/build/logs/clover.xml"/>
+    </logging>
+</phpunit>
