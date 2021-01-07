@@ -17,18 +17,11 @@ class StreamConnector extends BaseConnector
     private $configurator;
 
     /**
-     * @param ConnectionConfigurator|null $configurator
-     *
-     * @return $this|BaseConnector
+     * @param ConnectionConfigurator $configurator
      */
-    public function build(?ConnectionConfigurator $configurator): BaseConnector
+    public function __construct(ConnectionConfigurator $configurator)
     {
-        if (isset($configurator)) {
-            $this->configurator = $configurator;
-        } elseif (is_null($this->configurator)) {
-            true;
-//            throw new \Exception();
-        }
+        $this->configurator = $configurator;
 
         $connection = new AMQPStreamConnection(
             $this->configurator->host,
@@ -38,7 +31,5 @@ class StreamConnector extends BaseConnector
         );
 
         parent::setConnection($connection);
-
-        return $this;
     }
 }
