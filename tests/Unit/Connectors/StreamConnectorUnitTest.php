@@ -7,8 +7,15 @@ use BugsBunnyMq\CorePhp\Connectors\BaseConnector;
 use BugsBunnyMq\CorePhp\Connectors\StreamConnector;
 use Tests\BaseTest;
 
+/**
+ * Class StreamConnectorUnitTest
+ * @package Tests\Unit\Connectors
+ */
 class StreamConnectorUnitTest extends BaseTest
 {
+    /**
+     * @return void
+     */
     public function testBuildWithConfiguratorInformed(): void
     {
         $configurator = new ConnectionConfigurator();

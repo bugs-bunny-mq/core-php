@@ -7,11 +7,14 @@ use PhpAmqpLib\Connection\AMQPStreamConnection;
 
 /**
  * Class StreamConnector
+ *
  * @package BugsBunnyMq\CorePhp\Connectors
  */
 class StreamConnector extends BaseConnector
 {
     /**
+     * Property of configurator class of connection.
+     *
      * @var ConnectionConfigurator
      */
     private $configurator;
