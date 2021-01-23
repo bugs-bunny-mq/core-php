@@ -28,6 +28,14 @@ abstract class BaseConnector
     }
 
     /**
+     * @return AbstractConnection
+     */
+    public function connection(): AbstractConnection
+    {
+        return $this->connection;
+    }
+
+    /**
      * @throws Exception
      */
     public function __destruct()
