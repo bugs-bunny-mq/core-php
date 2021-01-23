@@ -21,8 +21,7 @@ class Channel
      *
      * @param $connector
      */
-    public function __construct(BaseConnector $connector)
-    {
+    public function __construct(BaseConnector $connector){
         $this->connector = $connector;
     }
 
