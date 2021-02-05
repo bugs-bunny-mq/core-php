@@ -3,16 +3,16 @@
 namespace BugsBunnyMq\CorePhp\Channels;
 
 use BugsBunnyMq\CorePhp\Connectors\BaseConnector;
-use PhpAmqpLib\Channel\AbstractChannel;
+use PhpAmqpLib\Channel\AMQPChannel;
 
 /**
- * Class BaseChannel
+ * Class Channel
  */
 class Channel
 {
     private $connector;
     /**
-     * @var AbstractChannel
+     * @var AMQPChannel
      */
     private $channel;
 
@@ -29,9 +29,9 @@ class Channel
     /**
      * @param int|null $channelId
      *
-     * @return AbstractChannel
+     * @return AMQPChannel
      */
-    public function channel(?int $channelId = null): AbstractChannel
+    public function channel(?int $channelId = null): AMQPChannel
     {
         if (is_null($this->channel)) {
             $this->channel = $this->connector->connection()->channel($channelId);
